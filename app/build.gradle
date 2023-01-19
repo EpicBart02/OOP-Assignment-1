@@ -3,14 +3,15 @@
  *
  * This generated file contains a sample Java application project to get you started.
  * For more details take a look at the 'Building Java & JVM projects' chapter in the Gradle
- * User Manual available at https://docs.gradle.org/7.3.3/userguide/building_java_projects.html
+ * User Manual available at https://docs.gradle.org/7.6/userguide/building_java_projects.html
  */
 
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'checkstyle'
-    id "com.github.spotbugs" version "5.0.4"
+    id "com.github.spotbugs" version "5.0.13"
+
 }
 
 spotbugsMain {
@@ -30,13 +31,6 @@ spotbugsMain {
     }
 }
 
-// we dont wan't to run the spotbugs on the unit tests
-spotbugsTest {
-    ignoreFailures = false
-    showStackTraces = false
-    enabled = false
-}
-
 checkstyle {
     // assign the latest checkstyle version explicitly
     // default version is very old, likes 5.9
@@ -48,6 +42,8 @@ checkstyle {
     sourceSets = [] // remove from default build only explicit calls ig.e. gradlew checkStyleMain
 }
 
+
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -55,23 +51,22 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
 
     // This dependency is used by the application.
-    implementation 'com.google.guava:guava:30.1.1-jre'
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+
+run {
+    standardInput = System.in
 }
 
 application {
     // Define the main class for the application.
-    mainClass = 'assignment1.App'
-}
-
-run {
-  standardInput = System.in
+    mainClass = 'assignmentone.App'
 }
 
 tasks.named('test') {
-
     // make sure we run the code quality stuff first
     // we need the generated reports when testing
     dependsOn checkstyleMain
@@ -79,6 +74,13 @@ tasks.named('test') {
 
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+// we dont wan't to run the spotbugs on the unit tests
+spotbugsTest {
+    ignoreFailures = false
+    showStackTraces = false
+    enabled = false
 }
 
 test {
@@ -93,3 +95,5 @@ test {
         showStandardStreams = true
     }
 }
+
+
