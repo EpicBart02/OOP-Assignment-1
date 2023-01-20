@@ -76,7 +76,7 @@ public class App {
     app.helloThere();
 
     // Task 2
-    //app.seconds(consoleInput);
+    //app.seconds();
 
     // Task 3
     //app.imInaBand();
