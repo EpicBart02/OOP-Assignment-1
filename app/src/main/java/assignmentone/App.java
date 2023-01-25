@@ -19,14 +19,12 @@ public class App {
   /**
    * Solution to first task.
    */
-  public void helloThere() {
-    System.out.print("What is your name? ");
-    String name = input.nextLine();
-
-    // Remove this and replace with your implementation
-    // using the HelloThere class.
-    System.out.println(name);
-
+  public String helloThere(){
+  HelloThere hello = new HelloThere();
+  System.out.print("Name, Please: ");
+  String name = input.nextLine();
+  System.out.println(hello.HelloThereName(name));
+  return name;
   }
 
   /**
@@ -73,10 +71,10 @@ public class App {
     App app = new App(consoleInput);
 
     // Task 1
-    app.helloThere();
+    // app.helloThere();
 
     // Task 2
-    //app.seconds();
+    app.seconds();
 
     // Task 3
     //app.imInaBand();
