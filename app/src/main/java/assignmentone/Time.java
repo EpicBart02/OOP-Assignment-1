@@ -1,14 +1,10 @@
 package assignmentone;
-import java.util.Scanner;
+
 
 public class Time {
 
- private Scanner input;
-
-  public void HourMinuteSeconds(){
-    System.out.print("Enter hours, minutes and seconds: ");
-    int num = input.nextInt();
-    
+  public Integer toSeconds(int sec, int min, int hours){
+    return sec + (min*60) + ((hours * 60) * 60);
   }
 
 }

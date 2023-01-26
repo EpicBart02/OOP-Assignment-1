@@ -31,7 +31,13 @@ public class App {
    * Solution for the second task.
    */
   public void seconds() {
-
+  Time time = new Time();
+  System.out.print("Please enter hours, minutes and seconds: ");
+  String[] num = input.nextLine().split(" ");
+  int hours = Integer.parseInt(num[0]);
+  int minutes = Integer.parseInt(num[1]);
+  int seconds = Integer.parseInt(num[2]);
+  System.out.println(time.toSeconds(seconds, minutes, hours));
   }
 
   /**
