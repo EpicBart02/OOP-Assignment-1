@@ -44,7 +44,8 @@ public class App {
    * Solution for the third task.
    */
   public void imInaBand() {
-
+    Album billieAlbum = new Album("Happier than ever", 2020, "Billie Eilish");
+    System.out.print(billieAlbum.getName() + " was released in " + billieAlbum.getReleaseYear() + " by " + billieAlbum.getArtist());
   }
 
   /**
@@ -80,10 +81,10 @@ public class App {
     // app.helloThere();
 
     // Task 2
-    app.seconds();
+    // app.seconds();
 
     // Task 3
-    //app.imInaBand();
+    app.imInaBand();
 
     // Task 4 
     //app.bestAlbumsEver();
