@@ -29,15 +29,20 @@ public class ArrayAlgorithms {
     
     
       public Integer minIndex(int[] min){
-        int theMinIndex = min[1];
-        int i;
-        int size = min.length;
-        for(i = 0; i<size; i++){
-          if(theMinIndex > min[i]){
-            theMinIndex = i;
+        int theMinIndex = 0;
+        int size = min.length - 1;
+        for(int i = 0; i < size; i++){
+          for(int b = size; b > 0; b--){
+            if(min[b] < min[i]){
+              theMinIndex = b;
+            }
+            else{
+              theMinIndex = i;
+            }
           }
         }
-        return theMinIndex - 1;
+        return theMinIndex + 1;
+
       }
     
     
