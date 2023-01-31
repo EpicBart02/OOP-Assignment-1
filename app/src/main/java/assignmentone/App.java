@@ -4,6 +4,7 @@
 
 package assignmentone;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -23,7 +24,7 @@ public class App {
   HelloThere hello = new HelloThere();
   System.out.print("Name, Please: ");
   String name = input.nextLine();
-  System.out.println(hello.HelloThereName(name));
+  System.out.println(hello.hello(name));
   return name;
   }
 
@@ -45,20 +46,40 @@ public class App {
    */
   public void imInaBand() {
     Album billieAlbum = new Album("Happier than ever", 2020, "Billie Eilish");
-    System.out.print(billieAlbum.getName() + " was released in " + billieAlbum.getReleaseYear() + " by " + billieAlbum.getArtist());
+    System.out.print(billieAlbum.getName() + " was released in " + billieAlbum.getYear() + " by " + billieAlbum.getArtist());
   }
 
   /**
    * Solution for the fourth task.
    */
   public void bestAlbumsEver() {
-
+    AlbumGenerator albumGen = new AlbumGenerator();
+    Album[] albums = albumGen.generateAlbums();
+    for (Album a : albums) {
+      System.out.print(a.getName() + " was released in ");
+      System.out.print(a.getYear() + " by ");
+      System.out.print(a.getArtist());
+      System.out.println();
+    }
   }
 
   /**
    * Solution for the fifth task.
    */
   public void workingWithArrays() {
+    int[] numbers = {5, 2, 6, 4, 1, 3, 7, 9, 8};
+    int[] nums = {5, 2, 6, 4, 1, 3, 7, 9, 8};
+    ArrayAlgorithms arrayAlgorithms = new ArrayAlgorithms();
+    System.out.println(Arrays.toString(numbers));
+    System.out.println("The average is " + arrayAlgorithms.average(numbers));
+    System.out.println("The largest value is " + arrayAlgorithms.maxValue(numbers));
+    System.out.println("The index of the smallest value is at position " + arrayAlgorithms.minIndex(numbers));
+    System.out.println("The shifted array:");
+    int[] shift = arrayAlgorithms.shift(numbers);
+    System.out.println(Arrays.toString(shift));
+    int[] shuff = arrayAlgorithms.shuffle(nums);
+    System.out.println("Shuffeled array:");
+    System.out.println(Arrays.toString(shuff));
 
   }
 
@@ -78,19 +99,19 @@ public class App {
     App app = new App(consoleInput);
 
     // Task 1
-    // app.helloThere();
+    //  app.helloThere();
 
     // Task 2
     // app.seconds();
 
     // Task 3
-    app.imInaBand();
+    // app.imInaBand();
 
     // Task 4 
     //app.bestAlbumsEver();
 
     // Task 5
-    //app.workingWithArrays();
+    app.workingWithArrays();
 
     // now we are exiting the application so time to close the scanner.
     consoleInput.close();

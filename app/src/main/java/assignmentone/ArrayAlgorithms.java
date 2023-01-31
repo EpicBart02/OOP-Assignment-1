@@ -34,34 +34,35 @@ public class ArrayAlgorithms {
         int size = min.length;
         for(i = 0; i<size; i++){
           if(theMinIndex > min[i]){
-            theMinIndex = min[i];
+            theMinIndex = i;
           }
         }
-        return theMinIndex;
+        return theMinIndex - 1;
       }
     
     
       public int[] shift(int[] numbers){
         int i;
         int size = numbers.length;
-        int[] num = new int[size-1];
+        int[] num = new int[size];
         for(i = 1; i < size; i++){
           num[i-1] = numbers[i];
         }
-        num[7] = numbers[0];
+        num[size-1] = numbers[0];
         return num;
       }
     
     
-     /* public int[] shuffle(int[] numbers){
-        int i; int k;
-        int size = numbers.length;
-        int[] num = new int[size - 1];
+      public int[] shuffle(int[] numbers){
         Random rand = new Random();
-        for(i = 0, k = 0; i <= size; k++){
-          num[k] = rand.nextInt();
-          numbers.pop[]
+        int size = numbers.length - 1;
+        for(int i = 0; i < size; i++){
+          int randomIndex = rand.nextInt(size);
+          int temp = numbers[randomIndex];
+          numbers[randomIndex] = numbers[i];
+          numbers[temp] = temp;
         }
+      return numbers;
       }
-      */
+      
 }

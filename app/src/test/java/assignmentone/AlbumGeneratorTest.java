@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
  * Test class for AlbumGenerator.
  */
 public class AlbumGeneratorTest {
-/*   @Test
+   @Test
   public void testAlbumGenerator() {
     // Tests that the constructor and getters works correctly.
     AlbumGenerator albumGenerator = new AlbumGenerator();
@@ -23,5 +23,5 @@ public class AlbumGeneratorTest {
       assertNotEquals("No artist", a.getArtist());
       assertNotEquals(-1, a.getYear());
     }
-  }*/
+  }
 }

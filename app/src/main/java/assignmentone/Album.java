@@ -8,16 +8,16 @@ public class Album {
 
   public Album(String realName, Integer realReleaseYear, String realArtist){
     setName(realName);
-    setReleaseYear(realReleaseYear);
+    setYear(realReleaseYear);
     setArtist(realArtist);
   }
 
   public void setName(String realName){
-    if(realName.length() >= 4){
+    if(realName != null && realName.length() >= 4){
       this.name = realName;
     }
     else{
-      name = "No Name";
+      name = "No name";
     }
   }
 
@@ -25,7 +25,7 @@ public class Album {
     return name;
   }
 
-  public void setReleaseYear(Integer realReleaseYear){
+  public void setYear(Integer realReleaseYear){
     if(realReleaseYear > 1800 && realReleaseYear < 2030){
       releaseYear = realReleaseYear;
     }
@@ -34,16 +34,16 @@ public class Album {
     }
   }
 
-  public Integer getReleaseYear(){
+  public Integer getYear(){
     return releaseYear;
   }
 
   public void setArtist(String realArtist){
-    if(realArtist.length() >= 4){
+    if(realArtist != null && realArtist.length() >= 4){
       artist = realArtist;
     }
     else{
-      artist = "No Artist";
+      artist = "No artist";
     }
   }
 
