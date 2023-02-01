@@ -76,6 +76,7 @@ public class ArrayAlgorithms {
   
   /**
    * I create a new integer variable and give it a random value between the first and last index of the array.
+   * I also store the previous index value in temp, so i can use it later on.
    * I do this until the entire array is filled.
    */
 
