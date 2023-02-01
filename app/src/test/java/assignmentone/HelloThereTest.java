@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
  */
 public class HelloThereTest {
   
-  /*@Test
+  @Test
   public void testHello() {
     HelloThere helloThere = new HelloThere();
     String greeting = helloThere.hello("Bob");
     assertEquals("Hello there, Bob", greeting);
-  }*/
+  }
 }

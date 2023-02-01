@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  */
 public class TimeTest {
   
-  /*@Test
+  @Test
   public void testToSeconds() {
     Time time = new Time();
     int h = 1;
@@ -18,6 +18,6 @@ public class TimeTest {
     int expected = 5445;
     int result = time.toSeconds(h, m, s);
     assertEquals(expected, result);
-  }*/
+  }
 
 }
