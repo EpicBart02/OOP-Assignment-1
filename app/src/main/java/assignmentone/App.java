@@ -17,36 +17,37 @@ public class App {
     this.input = scannerInput;
   }
 
+
   /**
    * Solution to first task.
    */
-  public String helloThere(){
-  HelloThere hello = new HelloThere();
-  System.out.print("Name, Please: ");
-  String name = input.nextLine();
-  System.out.println(hello.hello(name));
-  return name;
+  public String helloThere() {
+    HelloThere hello = new HelloThere();
+    System.out.print("Name, Please: ");
+    String name = input.nextLine();
+    System.out.println(hello.hello(name));
+    return name;
   }
 
   /**
    * Solution for the second task.
    */
   public void seconds() {
-  Time time = new Time();
-  System.out.print("Please enter hours, minutes and seconds: ");
-  String[] num = input.nextLine().split(" ");
-  int hours = Integer.parseInt(num[0]);
-  int minutes = Integer.parseInt(num[1]);
-  int seconds = Integer.parseInt(num[2]);
-  System.out.println(time.toSeconds(seconds, minutes, hours));
+    Time time = new Time();
+    System.out.print("Please enter hours, minutes and seconds: ");
+    String[] num = input.nextLine().split(" ");
+    int hours = Integer.parseInt(num[0]);
+    int minutes = Integer.parseInt(num[1]);
+    int seconds = Integer.parseInt(num[2]);
+    System.out.println(time.toSeconds(seconds, minutes, hours));
   }
 
   /**
    * Solution for the third task.
    */
   public void imInaBand() {
-    Album billieAlbum = new Album("Happier than ever", 2020, "Billie Eilish");
-    System.out.print(billieAlbum.getName() + " was released in " + billieAlbum.getYear() + " by " + billieAlbum.getArtist());
+    Album billie = new Album("Happier than ever", 2020, "Billie Eilish");
+    System.out.print(billie.getName() + " was released in " + billie.getYear() + " by " + billie.getArtist());
   }
 
   /**
@@ -68,7 +69,7 @@ public class App {
    */
   public void workingWithArrays() {
     int[] numbers = {5, 2, 6, 4, 1, 3, 7, 9, 8};
-    int[] nums = {5, 2, 6, 4, 1, 3, 7, 9, 8};
+    int[] numsb = {5, 2, 6, 4, 1, 3, 7, 9, 8};
     ArrayAlgorithms arrayAlgorithms = new ArrayAlgorithms();
     System.out.println(Arrays.toString(numbers));
     System.out.println("The average is " + arrayAlgorithms.average(numbers));
@@ -77,7 +78,7 @@ public class App {
     System.out.println("The shifted array:");
     int[] shift = arrayAlgorithms.shift(numbers);
     System.out.println(Arrays.toString(shift));
-    int[] shuff = arrayAlgorithms.shuffle(nums);
+    int[] shuff = arrayAlgorithms.shuffle(numsb);
     System.out.println("Shuffeled array:");
     System.out.println(Arrays.toString(shuff));
 
