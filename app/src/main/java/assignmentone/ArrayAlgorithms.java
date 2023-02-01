@@ -81,12 +81,12 @@ public class ArrayAlgorithms {
 
   public int[] shuffle(int[] numbers) {
     Random rand = new Random();
-    int size = numbers.length - 1;
+    int size = numbers.length;
     for (int i = 0; i < size; i++) {
-      int randomIndex = rand.nextInt(size);
+      int randomIndex = rand.nextInt(size - 1);
       int temp = numbers[randomIndex];
       numbers[randomIndex] = numbers[i];
-      numbers[temp] = temp;
+      numbers[i] = temp;
     }
     return numbers;
   }
